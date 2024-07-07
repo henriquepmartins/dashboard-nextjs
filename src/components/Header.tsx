@@ -5,11 +5,12 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "./ToggleMode";
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Posts", href: "/posts" },
-  { name: "Criar posts", href: "#" },
+  { name: "Criar posts", href: "/create-post" },
+  
 ];
 
 export default function Header() {
@@ -51,7 +52,7 @@ export default function Header() {
               className={`text-sm font-semibold leading-6 hover:text-zinc-900 ${
                 pathname === item.href
                   ? "font-semibold text-zinc-900"
-                  : "text-zinc-500"
+                  : "text-zinc-400"
               }`}
             >
               {item.name}
@@ -60,8 +61,6 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="pr-80">
-          <ModeToggle />
-
           </div>
           <a
             href="#"
